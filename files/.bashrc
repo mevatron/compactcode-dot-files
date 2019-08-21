@@ -21,3 +21,12 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # Ruby version management.
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
+
+# Disable the pure prompt from making remote git fetch.
+export PURE_GIT_PULL=0
+
+# GPG Prompt.
+export "GPG_TTY=$(tty)"
+
+# Replace SSH with GPG.
+export "SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)"
