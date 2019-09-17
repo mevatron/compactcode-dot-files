@@ -44,15 +44,9 @@ if has('nvim')
   " Syntax checking.
   Plug 'neomake/neomake'
 
-  " Autocomplete
-  Plug 'roxma/nvim-yarp'
-  Plug 'ncm2/ncm2'
-  Plug 'ncm2/ncm2-bufword'
-
   " Snippet engine.
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
-  Plug 'ncm2/ncm2-ultisnips'
 end
 
 call plug#end()
@@ -291,12 +285,6 @@ nnoremap <Leader>s :RgCurrentWord<CR>
 " (plugin) ultiSnips
 " ************************************************************
 
-" Press enter key to trigger snippet expansion.
-inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
-
-" Remove the default expansion binging to tab. We will use ncm2 completion instead.
-let g:UltiSnipsExpandTrigger="<c-j>"
-
 " Use tab to move around within an expansion.
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
@@ -308,18 +296,3 @@ let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
 " Auto check on save.
 autocmd! BufWritePost * Neomake
-
-
-" ************************************************************
-" (plugin) ncm2
-" ************************************************************
-
-" Enable for all buffers.
-autocmd! BufEnter * call ncm2#enable_for_buffer()
-
-" Prevent unwanted completions and enable the completion menu.
-set completeopt=noinsert,menu
-
-" Use tab to move around the completion menu.
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
