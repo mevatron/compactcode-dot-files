@@ -1,6 +1,7 @@
 source $HOME/.bashrc
 
-source ~/.zplug/init.zsh
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
 zplug "modules/editor",    from:prezto # emacs key bindings.
 zplug "modules/directory", from:prezto # automatic cd/pushd/popd etc.
