@@ -4,11 +4,14 @@
   default = simple
 [user]
   name = Shanon McQuay
-  email = shanonmcquay@gmail.com
+  email = hi@shan.dog
+  signingkey = BF2AD40D0652EF0B
 [color]
   diff = auto
   status = auto
   branch = auto
+[commit]
+  gpgsign = true
 [alias]
   st = status
   ci = commit
@@ -16,5 +19,3 @@
   co = checkout
   df = diff
   lg = log -p
-[github]
-  user = compactcode
