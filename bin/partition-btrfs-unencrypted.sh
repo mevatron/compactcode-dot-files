@@ -43,7 +43,7 @@ sudo -i mount -o compress=zstd,noatime,subvol=nix /dev/disk/by-label/$MAIN_LABEL
 
 # Mount the boot partition within main for installation.
 sudo -i mkdir /mnt/boot
-sudo -i mount /dev//disk/by-label/$BOOT_LABEL /mnt/boot
+sudo -i mount /dev/disk/by-label/$BOOT_LABEL /mnt/boot
 
 # Mount the swap partition within main for installation.
 sudo -i mount -o subvol=swap /dev/disk/by-label/$MAIN_LABEL /mnt/swap
