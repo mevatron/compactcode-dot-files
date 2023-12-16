@@ -49,3 +49,6 @@ sudo -i mount /dev/disk/by-label/$BOOT_LABEL /mnt/boot
 sudo -i mount -o subvol=swap /dev/disk/by-label/$MAIN_LABEL /mnt/swap
 sudo -i btrfs filesystem mkswapfile --size 4g /mnt/swap/swapfile
 sudo -i swapon /mnt/swap/swapfile
+
+# Generate configurations
+sudo nixos-generate-config --root /mnt
