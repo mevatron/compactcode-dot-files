@@ -21,7 +21,7 @@ sleep 4
 # Format the boot partition.
 sudo -i mkfs.fat -F 32 -n $BOOT_LABEL /dev/disk/by-partlabel/ESP
 # Format the primary partition.
-sudo -i mkfs.btrfs -L $MAIN_LABEL /dev/disk/by-partlabel/primary
+sudo -i mkfs.btrfs -f -L $MAIN_LABEL /dev/disk/by-partlabel/primary
 
 # Wait for disk labels to be ready.
 sleep 4
