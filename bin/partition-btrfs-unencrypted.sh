@@ -7,13 +7,13 @@ BOOT_LABEL=boot
 MAIN_LABEL=nixos
 
 # Partition using gpt as required by UEFI.
-sudo -i parted $INSTALL_DRIVE_NAME -- mklabel gpt
+sudo -i parted -s $INSTALL_DRIVE_NAME -- mklabel gpt
 # Boot partition
-sudo -i parted $INSTALL_DRIVE_NAME -- mkpart ESP fat32 1MiB 512MiB
+sudo -i parted -s $INSTALL_DRIVE_NAME -- mkpart ESP fat32 1MiB 512MiB
 # Primary partition
-sudo -i parted $INSTALL_DRIVE_NAME -- mkpart primary 512MiB 100%
+sudo -i parted -s $INSTALL_DRIVE_NAME -- mkpart primary 512MiB 100%
 # Enable the boot partition.
-sudo -i parted $INSTALL_DRIVE_NAME -- set 1 boot on
+sudo -i parted -s $INSTALL_DRIVE_NAME -- set 1 boot on
 
 # Wait for disk labels to be ready.
 sleep 4
